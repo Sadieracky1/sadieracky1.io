@@ -1,46 +1,188 @@
+
+@font-face {
+	font-family: oldenglish;
+	src: url(oldenglish.ttf);
+  }
+
+  @font-face {
+	font-family: ryeregular;
+	src: url(ryeregular.ttf);
+  }
+
+/* Basic CSS resets -- leveling slight inconsistencies in browsers */
+html, body {
+	margin: 100x;
+	padding:5px;
+	height:100%;
+}
+
+html {
+		/* Standard text-settings below */
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+main{
+	border: 10px rgb(168, 71, 75) solid;
+	padding-bottom: 20px;
+
+}
+
+#welcome{
+
+	background-color: #6a8756;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 30px;
+	color: #0e0f0d;
+	text-shadow: 2px 2px 2px #B7CE63;
+
+}
+
+img{
+	width: 30%;
+}
+
+header{
+
+	border-bottom: 20px rgb(168, 71, 75) solid;
+	text-shadow: 2px 2px 5px rgb(168, 71, 75);
+}
+
+#biomain {
+
+	background-color: green;
+	font-size: larger;
+
+}
+
+#mainp{
+
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*body background color*/
 body {
-    background-color:#52414C;
-  }
-  
-  h1 {
-    background-color: #E3655B;
-    margin-left: 20px;
-  }
- 
-  div#container
-  {
-width: 500px;
-color: #CFD186;
-margin: auto;
-border: 15px solid #5B8C5A;  
-padding: 15px;
-  margin: 9px;
-
-  }
-
-  p {
-    font-family: Tahoma, Verdana, sans-serif;
-    border: 15px solid #5B8C5A;
-  padding: 50px;
-   margin: 20px;
-    }
-
-  header 
-  {
+	
+	
+	background-color: #4B5842;
+	background-image: url("img/fur.png"); 
+	color:#1b1d1a;
+	font-family: ryeregular;
+	font-size: 20px;
+	font-family: oldenglish;
+	font-size: 20px;
 
 
-    font-family: fantasy;
-    border: 15px solid #5B8C5A;
-    padding: 50px;
-    margin: 20px;
+	text-align: center;
+	margin: 10px;
 
-  }
+}
 
-  footer 
-  {
-background-color: #596157;
-font-size: 9px;
- border: 15px solid #5B8C5A;
-  padding: 50px;
-  margin: 20px;
-  }
+#container{
+	
+	
+	border-width: 50px;
+	background-image: url(img/paintgif.gif);
+	width:90%;
+	height: 25%;
+	margin: auto;
+	padding:0px;
+
+
+}
+
+#assignments{
+	
+	background-image:url(img/water.JPG);
+	color: #000000;
+	margin: 10px;
+	padding: 40px;
+	line-height: 40px;
+	list-style-type: none;
+}
+#assignments a{
+	color: black;
+	font-size: 60px;
+	
+}
+
+ ul{
+
+	list-style-type: none;
+	padding: 0px;
+}
+
+nav li{
+
+	display:inline;
+	margin:10px;
+}
+
+a{
+	color:rgb(183, 97, 183);
+	
+
+}
+
+nav a {
+	color: #bbb;
+	font-size:1.5em;
+	display: inline-block;
+	text-decoration:none;
+	display: inline-block;
+	background: rgb(63, 0, 31); 
+	padding: 10px;
+	border-radius:10px;
+	width: 30%;
+
+}
+nav a:hover {
+color:black;
+background: #B7CE63;
+
+
+}
+
+p a {
+
+}
+
+h1, h2{
+	font-family:ryeregular;
+	font-size: 50px;
+}
+
+figure{
+	font-size: 10px;
+	margin:auto;
+	background-image: url(img/leather.JPG);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 50%; 
+	padding: 50px;
+	
+}
+
+img{
+
+	width: 90%;
+	height: 100%;
+
+	
+
+}
+
+figcaption,footer{
+/*font-size:10px;*/
+font-size: 2em;
+height: 10px;
+
+
+
+}
+
+
+
+
