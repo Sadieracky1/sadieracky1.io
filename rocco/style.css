@@ -1,0 +1,121 @@
+@font-face {
+    font-family: oldenglish;
+    src: url(oldenglish.ttf);
+}
+
+@font-face {
+    font-family: ryeregular;
+    src: url(ryeregular.ttf);
+}
+
+/* Basic CSS resets -- leveling slight inconsistencies in browsers */
+html, body {
+    cursor: url("img/traincurser.gif"), default;
+    margin: 100px; /* Corrected margin */
+    padding: 5px;
+    height: 100%;
+}
+
+html {
+    /* Standard text-settings below */
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+main {
+    border: 10px solid rgb(176, 65, 128);
+    padding-bottom: 20px;
+}
+
+#welcome {
+    background-color: #8bd45b;
+    width: 600px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    color: #0e0f0d;
+    text-shadow: 2px 2px 7px #fc0075;
+}
+
+img {
+    width: 30%;
+}
+
+header {
+    border-bottom: 20px solid rgb(122, 54, 107);
+    text-shadow: 2px 5px 9px rgb(184, 26, 150);
+}
+
+#mainp {
+    font-family: monospace;
+}
+
+/* Body background color */
+body {
+    background-image: url(img/1001.GIF);
+    color: #1b1d1a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+#container {
+    border-width: 50px;
+    background-image: url(img/hearts.gif);
+    width: 90%;
+    height: 25%;
+    margin: auto;
+    padding: 0px;
+}
+
+/* Box styling */
+.box {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin: 20px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    font-size: 24px;
+    line-height: 150px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+#yes-box {
+    background-color: #8bd45b;
+    color: #fff;
+}
+
+#no-box {
+    background-color: #f44336;
+    color: #fff;
+}
+
+/* Hidden gif divs */
+.hidden {
+    display: none;
+}
+
+#yes-gif, #no-gif {
+    margin-top: 20px;
+}
+
+/* Add some animation to gifs */
+#yes-gif img, #no-gif img {
+    width: 200px;
+    height: auto;
+}
+
+
+
+a {
+    color: rgb(183, 97, 183);
+}
