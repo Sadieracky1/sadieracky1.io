@@ -12,14 +12,14 @@ body {
     height: 100vh;
     background-image: linear-gradient(rgb(104, 80, 169), rgb(24, 55, 149));
     transition: background-image 1s ease-in-out;
-    overflow: hidden;
+    
 }
 
-
+/* I wanted to make this so alll chapes can be rearranged with curser but it wasnt possible
 .moon, .cat, .cat-head, .cat-ear, .eye, .nose, .mouth, .cat-body, .arm1, .arm2 {
     position: absolute;
     cursor: grab;
-}
+}*/
 
 .moon {
 	width: 100px;
