@@ -1,0 +1,300 @@
+/* Variable Declarations */
+@font-face {
+    font-family: 'oldenglish';
+    src: url(oldenglish.ttf);
+}
+@font-face {
+    font-family: 'serif';
+    src: url(serif.otf);
+}
+:root {
+    /* Color Palette */
+    --background-color: #694886;
+    --text-color: #da972b;
+    --link-color: #171313;
+    --link-visited-color: #335c67;
+    --link-hover-color: #ff75e8;
+    --bold-text-color: #335c67;
+    --bold-text-background: #e09f3e;
+    --italics-color: #be3cbe;
+    --underline-color: #51C2C8;
+    --header-color: #000000;
+    --header-background: #8e3053;
+    --scrollbar-thumb-color: #e09f3e;
+    --scrollbar-track-color: #ca58b1;
+    --select-text-color: #335c67;
+    --select-background-color: #51c86b;
+    --button-text-color: #007e49;
+    --button-background-color: #335c67;
+    --button-hover-color: #e84d81;
+    --button-hover-background: #e09f3e;
+    --ha-color: #078431;
+    --ah-color: #0c90b5;
+    --eh-color: #e09f3e;
+  
+    /* Font Variables */
+    --main-font: 'serif';
+    --font-size: 5px;
+    
+    --header-font: 'oldenglish';
+ 
+ 
+    /* Image Variables */
+    --background-image: url('pinkpaper.JPG');
+    --image-path: url('css/aboutmeimg/me.PNG'); /* make sure this exists */
+  }
+  
+  /* General Body Styles */
+  body {
+    background-image: var(--background-image);
+  }
+  
+  /* Layout Styles */
+  .wrap {
+    top: 110px;
+    width: 1100px;
+    height: 600px;
+    margin: 0 auto;
+    min-height: 500px;
+  }
+  
+  /* Bar Styles */
+  #bar {
+    top: -10px;
+    left: 0px;
+    width: auto;
+    height: auto;
+    padding: 1px;
+    background: var(--background-color);
+    margin-top: 3px;
+    text-align: left;
+    font: var(--font-size) var(--main-font);
+    line-height: 10px;
+    color: var(--text-color);
+  }
+  
+  /* Info Section Styles */
+  #info {
+    z-index: 7 !important;
+    position: absolute;
+    margin-top: 30px;
+    left: 70px;
+    width: 345px;
+    height: 500px;
+    overflow: auto;
+    overflow-x: hidden;
+    background: var(--background-color);
+    text-align: left;
+    font: var(--font-size) var(--main-font);
+    line-height: 12px;
+    padding-top: 5px;
+    color: var(--text-color);
+  }
+  
+  /* Navigation Styles */
+  #nav {
+    position: absolute;
+    width: 800px;
+    left: 70px;
+    top: 80px;
+    height: 50px;
+    z-index: 1 !important;
+  }
+  
+  /* Image Styles */
+  #image {
+    position: absolute;
+    width: 800px;
+    left: 50px;
+    top: 0px;
+    z-index: 9999 !important;
+    height: 1000px;
+    pointer-events: none;
+  }
+  
+  /* Special Text Styles */
+  .ha,
+  .ah,
+  .eh {
+    font: 20px arial;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-weight: bold;
+  }
+  
+  .ha {
+    color: var(--ha-color);
+  }
+  
+  .ah {
+    color: var(--ah-color);
+  }
+  
+  .eh {
+    color: var(--eh-color);
+  }
+  
+  /* Link Styles */
+  a:link,
+  a:active {
+    color: var(--link-color);
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  
+  a:visited {
+    font: var(--font-size) var(--main-font);
+    color: var(--link-visited-color);
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  
+  a:hover {
+    color: var(--link-hover-color);
+    text-transform: lowercase;
+  }
+  
+  /* Special Link Styles */
+  a.one:link,
+  a.one:visited {
+    font-family: var(--main-font);
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30;
+  }
+  
+  a.one:hover {
+    color: var(--link-hover-color);
+    text-decoration: none !important;
+    cursor: crosshair;
+    font-size: 17;
+  }
+  .one {
+    text-decoration: none; /* Removes underline */
+    color: var(--link-color, #4800ff); /* Uses your defined variable or defaults to blue */
+    font-weight: bold;
+    padding-top: 30px;
+    font-size: 12px;
+    transition: color 0.3s ease-in-out;
+}
+
+.one:hover {
+    color: var(--link-hover-color, #4BCEFF); /* Changes color on hover */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle glow effect */
+}
+
+
+p {
+  letter-spacing: 1px; /* Slightly increases spacing for readability */
+}
+  /* Bold Text Styles */
+  b {
+    font-weight: bold;
+    color: var(--bold-text-color);
+    background: var(--bold-text-background);
+  }
+  
+  /* Italics Styles */
+  i {
+    font: var(--font-size) var(--main-font);
+    font-style: italic;
+    color: var(--italics-color);
+  }
+  
+  /* Underline Styles */
+  u {
+    font: var(--font-size) var(--main-font);
+    font-style: underline;
+    color: var(--underline-color);
+  }
+
+  header {
+    font: 60px var(--header-font);
+    color: var(--header-color);
+    margin-left: 30px;
+    padding-bottom: 20px; /* Adds space below the header */
+  }
+  
+  /* Header Styles */
+  h1,
+  h2 {
+    font: 30px var(--header-font);
+    color: var(--header-color);
+    background: var(--header-background);
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1px;
+    border-bottom: 5px solid #b8ab26;
+    line-height: 14px;
+    margin-top: -1;
+    margin-bottom: 0;
+    
+  }
+  
+  h1 {
+    text-align: left;
+  }
+  
+  h2 {
+    text-align: right;
+  }
+  
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+  }
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 11px;
+    border: 3px none #a8bbff;
+  }
+  
+  /* Styles for the select element */
+  .morelinks {
+    color: var(--select-text-color);
+    font-family: Arial;
+    font-size: 10px;
+    font-style: normal;
+    background-color: var(--select-background-color);
+    border-style: none;
+    border-color: #FF77AC;
+    border-width: 1px;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+  }
+  
+  /* Styles for the button element */
+  .btnmorelinks {
+    color: var(--button-text-color);
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    background-color: var(--button-background-color);
+    border-style: none;
+    border-color: #FFFFFF;
+    cursor: crosshair;
+  }
+  
+  .btnmorelinks:hover {
+    color: var(--button-hover-color);
+    background-color: var(--button-hover-background);
+  }
+  
+  .btnmorelinks:active {
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+  }
+  
