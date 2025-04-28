@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Despyify Trains Now!</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* New dropdown animation style */
+    #inforesearch section .research p, 
+    #inforesearch section .profile-container p {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+      margin: 0;
+    }
+
+    #inforesearch section .research p.show, 
+    #inforesearch section .profile-container p.show {
+      max-height: 500px; /* Adjust if you need more space */
+      margin: 1em 0;
+    }
+
+    /* Optional: make images clickable visually */
+    .image-box img {
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="logo.png" alt="Despyify Trains Logo" class="logo" />
+      <h1 class="site-title">Despyify Trains Now!</h1>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="gear.html">Gear</a></li>
+        <li><a href="join.html">Join Us!</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content-box info-box">
+      <p>
+        <b>Our team</b> of independent scientists and researchers uncovered this alarming reality through months of field investigations, data analysis, and forensic examinations of decommissioned train cars. 
+        <b>Hidden cameras, laser-based tracking systems</b>, and covert audio recorders were discovered embedded in various components of the rail infrastructure — devices often disguised or encrypted to avoid detection. 
+        This research exposes how trains have been <b>weaponized</b> against the public under the guise of safety and efficiency, and raises urgent questions about civil liberties, data privacy, and the growing reach of <b>government surveillance</b>.
+      </p>
+    </section>
+  </main>
+
+  <main id="inforesearch">
+    <section class="content-box research">
+      <div class="research">
+        <div class="image-box">
+          <img class="research" src="surv.png" alt="Photo of research">
+        </div>
+        <p>
+          <b>Locomotive Image and Audio Recording Devices </b> (Transportation.gov)<br>
+          "Federal mandates require that all passenger trains be equipped with audio and visual recording devices, raising concerns about potential overreach."
+        </p>
+        <figcaption>https://images.app.goo.gl/aeefadovwWeFmutw5</figcaption>
+      </div>
+    </section>
+
+    <section class="content-box research2">
+      <div class="research">
+        <div class="image-box">
+          <img class="research" src="TP2.png" alt="Photo of research">
+        </div>
+        <p>
+          Are Chinese Metro Cars Spying on Americans? (Washington Post)<br>
+          "Concerns have been raised that foreign-manufactured train cars might be embedded with surveillance technology, transmitting data back to government agencies. 
+          They are listening and recording us….the government even proves it online."
+        </p>
+      </div>
+    </section>
+
+    <section class="content-box research3">
+      <div class="profile-container">
+        <div class="image-box">
+          <img src="TP.png" alt="Photo of the recording evidence">
+        </div>
+        <p>
+          Mass Transit as a Surveillance Tool (CNET)<br>
+          "Public transit systems are now being equipped with biometric surveillance and AI-driven monitoring, further eroding privacy in everyday travel."
+        </p>
+        <figcaption>https://images.app.goo.gl/aeefadovwWeFmutw5</figcaption>
+      </div>
+    </section>
+  </main>
+
+  <!-- DROPDOWN SCRIPT -->
+  <script>
+    // Hide all research paragraphs initially
+    document.querySelectorAll('#inforesearch p').forEach(function(p) {
+      p.classList.remove('show');
+    });
+
+    // Add click event to each image
+    document.querySelectorAll('#inforesearch .image-box img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        const parent = img.closest('section') || img.closest('div'); // find closest container
+        const para = parent.querySelector('p');
+        
+        // Hide all others first
+        document.querySelectorAll('#inforesearch p').forEach(function(p) {
+          if (p !== para) p.classList.remove('show');
+        });
+
+        // Toggle the clicked one
+        para.classList.toggle('show');
+      });
+    });
+  </script>
+
+</body>
+</html>
