@@ -1,0 +1,46 @@
+body {
+    background-color:#52414C;
+  }
+  
+  h1 {
+    background-color: #E3655B;
+    margin-left: 20px;
+  }
+ 
+  div#container
+  {
+width: 500px;
+color: #CFD186;
+margin: auto;
+border: 15px solid #5B8C5A;  
+padding: 15px;
+  margin: 9px;
+
+  }
+
+  p {
+    font-family: Tahoma, Verdana, sans-serif;
+    border: 15px solid #5B8C5A;
+  padding: 50px;
+   margin: 20px;
+    }
+
+  header 
+  {
+
+
+    font-family: fantasy;
+    border: 15px solid #5B8C5A;
+    padding: 50px;
+    margin: 20px;
+
+  }
+
+  footer 
+  {
+background-color: #596157;
+font-size: 9px;
+ border: 15px solid #5B8C5A;
+  padding: 50px;
+  margin: 20px;
+  }

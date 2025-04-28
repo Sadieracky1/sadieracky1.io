@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Despyify Trains Now!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="logo.png" alt="Despyify Trains Logo" class="logo" />
+      <h1 class="site-title">Despyify Trains Now!</h1>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="gear.html">Gear</a></li>
+        <li><a href="join.html">Join Us!</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+  <main>
+    <section class="content-box info-box">
+    
+      <p>
+        To keep these <b>VULTURES</b> off our backs. We have developed state of the art technology for you to purchase! This has been built and tested by the most advanced anti-surveillance scientists in the <b>Whole World!</b> Save your life now and buy <b>Today!</b>
+      </p>
+     
+
+      <main id="gearflex">
+        <section class="content-box founder-box gear-section" tabindex="0">
+            <h2>The Anti-Buggin-Tracking Wave-Radio <b>SignalBlocker9000</b></h2>
+            <div class="profile-container">
+                <div class="image-box">
+                    <img class="radio" src="RADIO.jpg" alt="Photo of the Founder">
+                </div>
+                <article>
+                    <p>
+                        Tired of being <b>tracked, traced, or triangulated?</b> Introducing the Anti-Buggin-Tracking Wave-Radio SignalBlocker9000™ — the ultimate defense system for your digital (and physical) privacy. Whether you’re dodging data leeches, avoiding nosy neighbors, or just craving some true radio silence, this sleek device scrambles, jams, and shields all major signal types, from GPS and Wi-Fi to cellular, RFID, and even psychic pigeons.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <section class="content-box whistleblower-box gear-section" tabindex="0">
+            <h2>Realist <b>Real Human Skin</b> Undetectable Face Mask</h2>
+            <div class="mask">
+                <div class="image-box">
+                    <img src="MASK.jpg" alt="Photo of the Whistleblower">
+                </div>
+                <article>
+                    <p>
+                        Engineered for professional use in film, theater, special effects, and high-level disguise applications, the Real Human Skin Undetectable Face Mask delivers unprecedented realism and flexibility. Designed with advanced dermal-grade silicone and hand-painted with fine-pore detailing, this mask mirrors the subtleties of actual human skin — including texture, tone variation, and micro-expressions — making it virtually impossible to detect at a glance.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <section class="content-box whistleblower-box gear-section" tabindex="0">
+            <h2>Hyper Hearing Device: <b>Detect Listeners</b></h2>
+            <div class="spy">
+                <div class="image-box">
+                    <img class="spyg" src="SPYG.png" alt="Photo of the Whistleblower">
+                </div>
+                <article>
+                    <p>
+                        Discreet, powerful, and built for clarity, the Mini Recording and Listening Device is your go-to tool for covert audio surveillance, interviews, note-taking, or personal security. About the size of a USB stick, this ultra-compact device slips easily into pockets, bags, or hidden locations — delivering high-quality sound capture without drawing attention.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+      <script>
+        // Hide all articles initially
+        document.querySelectorAll('#gearflex section article').forEach(function(article) {
+          article.style.display = 'none';
+        });
+      
+        // Add click and keyboard listeners to each section
+        document.querySelectorAll('#gearflex section').forEach(function(section) {
+          // Click on image or section toggles article
+          section.addEventListener('click', function(e) {
+            if (e.target.tagName === 'IMG' || e.target === section) {
+              toggleGearArticle(section);
+            }
+          });
+          // Pressing Enter or Space toggles article
+          section.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              toggleGearArticle(section);
+            }
+          });
+        });
+      
+        function toggleGearArticle(section) {
+          let art = section.querySelector('article');
+          let expanded = art.style.display === 'block';
+          // Hide all articles first
+          document.querySelectorAll('#gearflex section article').forEach(function(a) {
+            a.style.display = 'none';
+          });
+          // Show or hide the clicked one
+          art.style.display = expanded ? 'none' : 'block';
+        }
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
