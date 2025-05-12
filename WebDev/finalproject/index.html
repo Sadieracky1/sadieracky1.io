@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Despyify Trains NOW!</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body class= "home">
+
+  <div class="top-bar">
+    <img src="img/logo.png" alt="Despyify Trains Logo" class="logo" />
+    <h1 class="site-title box3">Despyify Trains NOW!</h1>
+  </div>
+  
+  <img src="img/Train.gif" alt="train gif" width="100%">
+  
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="gear.html">Gear</a></li>
+      <li><a href="join.html">Join Us!</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="flex-container box2">
+    <section class="content-box info-box">
+      <p>
+        Welcome to <b>Despyify Trains</b>, we are the only platform dedicated to exposing the <b>secret surveillance systems </b> embedded in U.S. railway infrastructure. Trains, both passenger and freight, are no longer just means of transportation—they are sophisticated monitoring tools, tracking every move of <b>unsuspecting citizens</b>. 
+        Through <b>hidden cameras</b>, laser tracking, and covert audio recording, the government has turned its railway system into a vast intelligence-gathering network. Our mission is simple: to <b>uncover the truth</b> and empower the public to take back their privacy.
+      </p>
+    </section>
+
+  </div>
+  </main>
+
+  <main id="people" class="flex-container box">
+    <section class="content-box founder-box">
+      <div class="profile-container">
+        <div class="image-box">
+          <h2>Meet the Founder</h2>
+          <img class="founder-photo" src="img/founder.png" alt="Photo of the Founder">
+          
+        </div>
+        <p>
+          <b>Alexei Turner</b>, a former railway systems engineer, founded Despyify Trains after discovering covert surveillance tech embedded in freight engines. Alexei has dedicated his life to unveiling <b>hidden government activities</b> and empowering others to reclaim privacy in public infrastructure. src:https://mainichi.jp/english/graphs/20180706/hpe/00m/0na/001000g/20180706hpe00m0na006000q
+       
+        </p>
+        <!-- Toggle Link for the Image -->
+        <span class="toggle-text">Click to read more!</span>
+      </div>
+    </section>
+  
+    <section class="content-box whistleblower-box box">
+      <div class="profile-container">
+        <div class="image-box">
+          <img src="img/wb.jpg" alt="Photo of the Whistleblower">
+          <h2>The Whistleblower</h2>
+        </div>
+        <p>
+          In honor of an anonymous railway engineer <b>Michael Juarez</b>, who in 2012 attempted to leak documents proving the installation of <b>surveillance equipment</b> inside Amtrak trains. The individual mysteriously disappeared before the files could reach the public. Today, his bravery fuels our fight for transparency. 
+          src:https://images.app.goo.gl/pKe6HrGgauzGnpdk9
+        </p>
+        <!-- Toggle Link for the Image -->
+        <span class="toggle-text">Click to read more!</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Hide all profile paragraphs initially
+    document.querySelectorAll('#people p').forEach(function(p) {
+      p.classList.remove('show');
+    });
+
+    // Add click event to each image
+    document.querySelectorAll('#people .image-box img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        const parent = img.closest('section') || img.closest('div'); // find closest container
+        const para = parent.querySelector('p');
+        
+        // Hide all others first
+        document.querySelectorAll('#people p').forEach(function(p) {
+          if (p !== para) p.classList.remove('show');
+        });
+
+        // Toggle the clicked one
+        para.classList.toggle('show');
+      });
+    });
+
+    // Add click event to the toggle text
+    document.querySelectorAll('.toggle-text').forEach(function(link) {
+      link.addEventListener('click', function() {
+        const parent = link.closest('.profile-container');
+        const para = parent.querySelector('p');
+        
+        // Toggle the paragraph visibility
+        para.classList.toggle('show');
+      });
+    });
+  </script>
+
+</body>
+</html>
