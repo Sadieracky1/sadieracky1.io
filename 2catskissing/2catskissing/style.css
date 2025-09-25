@@ -1,0 +1,549 @@
+:root {
+  /* ---- Greens & Neutrals ---- */
+  --dark-color: #2F4F2F;
+  --dark-secondary-color: #3C5A3C;
+  --mid-color: #6B8E23;
+  --light-color: #A7C99B;
+  --light-secondary-color: #E3F2D0;
+
+  --title-text-color: #3B7A2A;
+  --main-text-color: #4E6E41;
+
+  --title-text-font: 'title-text-font', 'Arial', sans-serif;
+  --main-text-font: 'main-text-font', 'Arial', sans-serif;
+
+  --header-bg: url('img/board.jpg');
+  --body-bg: url('img/transparentgridtexture.png');
+
+  --overlay-bg: rgba(34, 55, 28, 0.85);
+  --overlay-text: #DDEECC;
+  --overlay-transition: 0.3s;
+}
+
+@font-face {
+  font-family: 'main-text-font';
+  src: url('fonts/code.ttf');
+}
+@font-face {
+  font-family: 'title-text-font';
+  src: url('fonts/code.ttf');
+}
+
+/* ---- Reset ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--main-text-font);
+  background: var(--body-bg) var(--dark-color);
+  color: var(--main-text-color);
+}
+
+/* ---- Header ---- */
+header {
+  background: var(--header-bg) var(--dark-color);
+  color: var(--light-secondary-color);
+  text-align: center;
+  padding: 32px 0 24px 0;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+header h1 {
+  font-family: var(--title-text-font);
+  font-size: 5rem;
+  letter-spacing: 3px;
+  text-shadow:
+    -3px -3px 6px rgba(27, 95, 38, 0.6),
+     3px -3px 6px rgba(47, 171, 45, 0.6),
+    -3px  3px 6px rgba(81, 170, 46, 0.6),
+     3px  3px 6px rgba(15, 64, 19, 0.8);
+}
+
+/* ---- Navigation ---- */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  background: var(--dark-secondary-color);
+  padding: 16px 0;
+}
+
+nav a {
+  color: var(--light-secondary-color);
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a:focus {
+  color: var(--mid-color);
+}
+
+/* ---- Main content ---- */
+main {
+  width: 85%;
+  max-width: 1200px;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+main h2 {
+  font-family: var(--title-text-font);
+  color: var(--title-text-color);
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--mid-color);
+  padding-bottom: 8px;
+}
+
+/* ---- About Page ---- */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ---- Gallery for Projects / Schematics ---- */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.gallery figure {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  text-align: center;
+  background: var(--light-secondary-color);
+  width: 260px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.gallery figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: rgba(34, 55, 28, 0.85);
+  color: #DDEECC;
+  font-family: var(--title-text-font);
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery figure:hover figcaption,
+.gallery figure:focus figcaption {
+  opacity: 1;
+}
+
+/* ---- Info box for Projects / Schematics ---- */
+.gallery figure .info {
+  display: none;
+  width: 100%;            /* fits the figure/image width */
+  box-sizing: border-box;
+  padding: 12px;
+  margin-top: 8px;
+  background: rgba(240,240,240,0.95);
+  color: #333;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.gallery figure.active .info {
+  display: block;
+}
+
+/* Specific tweaks for Schematic 1 and 3 */
+.gallery figure.s1 .info,
+.gallery figure.s3 .info {
+  padding: 16px;
+}
+
+/* Schematics gallery grid: 3 columns, 2 rows */
+#schematics .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: auto;                  /* rows adapt to content */
+  gap: 30px;                             /* space between boxes */
+  justify-items: center;                  /* center each figure */
+}
+
+/* Make each schematic figure bigger */
+#schematics figure {
+  width: 340px;        /* wider boxes */
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+/* Hover effect */
+#schematics figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Image inside figure fills the box */
+#schematics figure img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Overlay title on hover */
+#schematics figure figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(34, 55, 28, 0.85);
+  color: #DDEECC;
+  font-family: var(--title-text-font);
+  font-size: 1.3rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#schematics figure:hover figcaption,
+#schematics figure:focus figcaption {
+  opacity: 1;
+}
+
+/* Info box (drop-down) */
+#schematics figure .info {
+  display: none;
+  width: 100%;
+  padding: 16px;
+  margin-top: 8px;
+  background: rgba(240, 240, 240, 0.95);
+  color: #333;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+#schematics figure.active .info {
+  display: block;
+}
+#schematics h2 {
+  font-size: 3rem; /* larger text */
+  text-align: center; /* center the text */
+  color: #CFF0B2; /* lighter green */
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* subtle shadow */
+
+  /* Floating animation */
+  animation: floatTitle 3s ease-in-out infinite;
+}
+
+.schematic-info-box {
+  max-width: 900px;
+  margin: 20px auto 40px auto; /* centered, with spacing below */
+  padding: 24px 30px;
+  background: rgba(207, 240, 178, 0.9); /* light green, semi-transparent */
+  color: #2F4F2F; /* dark text for readability */
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  animation: floatBox 4s ease-in-out infinite;
+}
+
+.schematic-info-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+b {
+  font-size: 1.2em; /* makes bold text larger */
+  color: #092002;   /* optional: a lighter green for emphasis */
+}
+/* ---- About & Projects Page Headers ---- */
+#about h2,
+#projects h2 {
+  font-family: var(--title-text-font);
+  font-size: 2.5rem;                  /* larger font size */
+  text-align: center;                  /* center the text */
+  color: var(--light-secondary-color); /* lighter green color */
+  margin-bottom: 40px;                 /* space below heading */
+  letter-spacing: 2px;                 /* spacing between letters */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* subtle shadow */
+
+  /* Floating animation */
+  animation: floatText 3s ease-in-out infinite;
+}
+
+/* ---- About Me Section ---- */
+.about-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  background: rgba(167, 201, 155, 0.2); /* light green transparent box */
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.about-photo img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #A7C99B;
+}
+
+.about-text {
+  flex: 1;
+  color: #E3F2D0; /* light mint text color */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-text h3 {
+  font-size: 2rem;       /* larger title */
+  color: #DDEECC;        /* light text */
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ---- Interests Section ---- */
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.interest-box {
+  background: rgba(167, 201, 155, 0.2); /* soft light green */
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  color: #E3F2D0; /* lighter text color */
+  transition: transform 0.3s ease;
+}
+
+.interest-box:hover {
+  transform: translateY(-5px); /* subtle movement */
+}
+
+.interest-box h3 {
+  font-size: 1.8rem;  /* larger title */
+  margin-bottom: 12px;
+  color: #DDEECC;     /* light title color */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.interest-box ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.interest-box li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #E3F2D0; /* lighter text */
+}
+
+
+.contact-box {
+  border: 20px solid transparent; /* space for border image */
+  border-image-source: url('img/mixer.png'); /* your decorative border image */
+  border-image-slice: 30; /* adjust slice depending on your image */
+  border-image-repeat: round; /* repeat edges to fill the box */
+  border-image-width: 20px;
+  padding: 40px;
+  background-color: rgba(243, 243, 243, 0.95); /* keep box background visible */
+  border-radius: 12px; /* optional rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+/* Floating animation keyframes (reusable for all headers) */
+@keyframes floatText {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); } /* moves up slightly */
+  100% { transform: translateY(0); }
+}
+
+@keyframes floatBox {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+
+@keyframes floatTitle {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); } /* move up slightly */
+  100% { transform: translateY(0); }
+}
+
+/* Schematic 1 & 3 optional custom sizing */
+.info-s1, .info-s3 {
+  width: 100%; /* match figure width */
+  padding: 16px;
+}
+
+
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ---- Contact Page ---- */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  margin: 40px 0;
+}
+
+#contact h2 {
+  font-size: 5rem;
+  margin-bottom: 24px;
+}
+
+/* Contact Box */
+.contact-box {
+  background: var(--light-secondary-color);
+  max-width: 800px;
+  width: 85%;
+  margin: 60px auto;
+  padding: 80px 60px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--main-text-color);
+  letter-spacing: 1.5px;
+}
+
+.contact-box p {
+  margin: 20px 0;
+  font-size: 1.3rem;
+}
+.contact-box h3 {
+  font-size: 3rem;
+  color: var(--title-text-color);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.35);
+  margin-bottom: 20px;
+  animation: floatText 3s ease-in-out infinite;
+}
+
+.contact-box a {
+  color: var(--title-text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.contact-box a:hover,
+.contact-box a:focus {
+  color: var(--mid-color);
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--mid-color);
+  border-radius: 5px;
+  font-family: var(--main-text-font);
+}
+
+button {
+  background: var(--mid-color);
+  color: var(--light-secondary-color);
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover, button:focus {
+  background: var(--dark-color);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .gallery figure {
+    width: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 18px;
+  }
+
+  .gallery figure {
+    width: 100%;
+  }
+
+  main {
+    width: 95%;
+  }
+}
