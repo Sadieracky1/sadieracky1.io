@@ -1,0 +1,108 @@
+#no {
+    position: absolute;
+}
+#yay {
+    display: none;
+}
+#image{
+
+
+    display: none;
+}
+h1 {
+ 
+
+    font-size: 150px;
+    color: rgb(112, 0, 17);
+    font-family: 'love';
+  
+}
+
+h2{
+
+font-family: 'love';
+font-size: 50px;
+color:brown
+
+}
+
+@font-face {
+    font-family:'love' ;
+    src: url('Valentine.ttf');
+}
+
+
+
+
+  body {
+    background-image: url("pinkpaper.JPG");
+    background-color: #d0a3a3; /* Fallback color if image is unavailable */
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+button {
+    font-size: 36px;
+    padding: 20px 50px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-family: 'love', cursive;
+    box-shadow: 0 8px 20px rgba(212, 21, 21, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#yes {
+    background-color: rgb(180, 20, 40);
+    color: white;
+}
+
+#yes {
+    position: relative;
+    background-color: rgb(180, 20, 40);
+    color: white;
+    font-size: 36px;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-family: 'love', cursive;
+}
+
+#no {
+    position: absolute;
+    left: 50%;
+    transform: translateX(100px); /* starts just to the right of YES */
+    background-color: #f5b7c7;
+    color: rgb(112, 0, 17);
+    font-size: 36px;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-family: 'love', cursive;
+}
+
+#yay {
+    display: none;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#yay h2 {
+    font-size: 80px;
+    color: rgb(180, 20, 40);
+    font-family: 'love', cursive;
+    margin-bottom: 30px;
+}
+
+#image {
+    display: none;
+    width: 60%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
